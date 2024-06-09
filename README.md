@@ -42,12 +42,21 @@ by Zijie Feng
 
 <iframe
   src="assets/2_2_1.html"
-  width="500"
+  width="600"
   height="300"
   frameborder="0"
 ></iframe>
 
 - Plot 1: Shows a clearly right-skewed shape with the peak being around n_steps equal to 7, indicating that most recipes should have a number of steps less than 20.
+
+<iframe
+  src="assets/2_2_2.html"
+  width="600"
+  height="300"
+  frameborder="0"
+></iframe>
+
+- Plot 2: Shows that more than half of the recipes have an average rating of 5, and almost all recipes have an average rating above 3.
 
 
 ## Assessment of Missingness
