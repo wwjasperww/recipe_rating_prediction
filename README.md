@@ -168,7 +168,7 @@ by Zijie Feng
   frameborder="0"
 ></iframe>
 
-It seems like the relationship between calories and ratings could be quadratic and so creating polynomial features of degree 2 can help us more easily separate different nodes in the decision tree. Regarding the 'n_steps' column 
+- It seems like the relationship between calories and ratings could be quadratic and so creating polynomial features of degree 2 can help us more easily separate different nodes in the decision tree. Regarding the 'n_steps' column:
 
 <iframe
   src="assets/7_2.html"
@@ -177,9 +177,20 @@ It seems like the relationship between calories and ratings could be quadratic a
   frameborder="0"
 ></iframe>
 
-I would like to simplify this numerical column to a binary categorical column because this way, when people are making recipes, they can be more conscious about the ratings they might get when considering whether to exceed this n_steps limit. Both of these 2 features are selected for use in the baseline model, which already produced a pretty good result, so I wanted to improve them further to see if there could be bigger enhancements.
+- I would like to simplify this numerical column to a binary categorical column because this way, when people are making recipes, they can be more conscious about the ratings they might get when considering whether to exceed this n_steps limit. Both of these 2 features are selected for use in the baseline model, which already produced a pretty good result, so I wanted to improve them further to see if there could be bigger enhancements.
 
 - The modeling algorithm I chose was a Random Forest Regressor, which divides my training data into different groups using layers of decision rules. A Random Forest involves many different decision trees and it makes a decision based on the votes of all of its decision trees, which helps reduce variance significantly. The hyperparameters I chose to tune include n_estimators, max_depth, and min_samples_split. These hyperparameters helped me find a balance between bias and variance. The final selected combination of these hyperparameters is: n_estimators=300, max_depth=15, and min_samples_split=1500. A GridSearchCV was used to find this best combination, while setting the parameter scoring='neg_root_mean_squared_error'. Thus, this combination of hyperparameters provided the best RMSE in my process. While the improvement in RMSE from the baseline model to the final model is minimal, 0.650 - 0.648, I believe tha final model is a better model because it's more sophisticated, using more features, and more robust towards unseen data, quality of ensemble models. If they were to be put in production for real-world situations, the final model should be able to handle better.
 
 ## Fairness Analysis
 
+- **Null Hypothesis**: The final model's prediction RMSE is the same for both recipes with lots of steps (n_steps > 7) and recipes with fewer steps (n_steps <= 7).
+- **Alternative Hypothesis**: The final model's prediction RMSE is higher for recipes with lots of steps (n_steps > 7) than for recipes with fewer steps (n_steps <= 7).
+
+<iframe
+  src="assets/8_1.html"
+  width="600"
+  height="300"
+  frameborder="0"
+></iframe>
+
+- Group 1 contains recipes that have n_steps larger than 7 and Group 2 has recipes that have n_steps less than or equal to 7. The evaluation metric we will be using here is the prediction RMSE. The test statistic used for the permutation test is the difference between the prediction RMSE's from both groups (Lots of Steps - Fewer Steps). The significance level used here is the typical value of 0.05. However, the resulting p-value (0.006) is much lower than that, indicating a strong evidence in favor of the Alternative Hypothesis. Thus, we reject the Null Hypothesis. We can conclude that the final model does not achieve RMSE fairness for group 1 and group 2.
