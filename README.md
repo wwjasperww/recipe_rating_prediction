@@ -29,7 +29,7 @@ by Zijie Feng
 
 - **Head of Cleaned Dataset:**
 
-<pre>
+
 | name | id | minutes | contributor_id | submitted   | tags | n_steps | steps | description | ingredients | n_ingredients | average_rating_recipe | calories | total_fat | sugar | sodium | protein | saturated_fat | carbohydrates |
 |:-----------|-------:|----------:|-----------------:|:------------|:-----------|----------:|:-----------|:--------------|:--------------|----------------:|------------------------:|-----------:|------------:|--------:|---------:|----------:|----------------:|----------------:|
 | 1 brownies | 333281 |        40 |           985201 | 2008-10-27  | ['60-minut |        10 | ['heat the | these are     | ['bittersw    |               9 |                       4 |      138.4 |          10 |      50 |        3 |         3 |              19 |               6 |
@@ -37,7 +37,7 @@ by Zijie Feng
 | 412 brocco | 306168 |        40 |            50969 | 2008-05-30  | ['60-minut |         6 | ['preheat  | since ther    | ['frozen b    |               9 |                       5 |      194.8 |          20 |       6 |       32 |        22 |              36 |               3 |
 | millionair | 286009 |       120 |           461724 | 2008-02-12  | ['time-to- |         7 | ['freheat  | why a mill    | ['butter',    |               7 |                       5 |      878.3 |          63 |     326 |       13 |        20 |             123 |              39 |
 | 2000 meatl | 475785 |        90 |          2202916 | 2012-03-06  | ['time-to- |        17 | ['pan fry  | ready, set    | ['meatloaf    |              13 |                       5 |      267   |          30 |      12 |       12 |        29 |              48 |               2 |
-</pre>
+
 
 
 ## Assessment of Missingness
