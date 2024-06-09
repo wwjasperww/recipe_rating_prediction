@@ -38,6 +38,18 @@ by Zijie Feng
 | 2000 meatloaf   | 475785 |        90 | ...   |        29 |              48 |               2 |
 
 
+### Univariate Analysis
+
+<iframe
+  src="assets/2_2_1.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+- Plot 1: Shows a clearly right-skewed shape with the peak being around n_steps equal to 7, indicating that most recipes should have a number of steps less than 20.
+
+
 ## Assessment of Missingness
 
 
