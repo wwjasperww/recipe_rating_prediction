@@ -96,6 +96,44 @@ by Zijie Feng
 
 ## Assessment of Missingness
 
+### NMAR Analysis
+
+- 3 Columns containing missing values: name, description, average_rating_recipe
+
+- The only column that can reasonably be NMAR would be average_rating_recipe. This column was obtained by calculating the group mean ratings of each recipe. If this average rating is missing, then that means it did not receive any rating from the users. One possible reason for why users did not leave a rating would be that they would give a rating so low that they don't feel like actually doing it. Or they want to give a rating of 0 but it wasn't possible to be done. Thus, in this case, the missingness of the average ratings values depend on the ratings themselves, which aligns with the definition of NMAR. If we can obtain some additional information regarding the popularity of each recipe maybe the missingness of the average rating values can be MAR. If a recipe's popularity is very low or close to none, then it's likely that it has not received a rating simply because nobody has tried it out yet. In this case, a recipe's popularity can potentially indicate the missingness of the average rating values, thus making it MAR.
+
+### Missing Dependency
+
+<iframe
+  src="assets/3_2_1.html"
+  width="600"
+  height="300"
+  frameborder="0"
+></iframe>
+<iframe
+  src="assets/3_2_2.html"
+  width="600"
+  height="300"
+  frameborder="0"
+></iframe>
+
+- Based on the calculated p-value of 3.813369e-13 and the graphs, we can see that the column 'average_rating_recipe' does depend on 'n_steps'. The distribution of 'n_steps' that are missing the average ratings have a mean slightly shifted to the right and a thicker tail, while both distributions are right-skewed. To think about this finding intuitively, maybe it is the case that, with more steps included in the recipe, the recipe will be harder and less likely be tried out by a lot of people. So, maybe not enough people cared enough to give certain recipes a rating, thus the missingness. This insight also helps us think about the main question: what types of recipes tend to get higher average ratings? Maybe a shorter and more concise recipe would be more recommended?
+
+<iframe
+  src="assets/3_2_3.html"
+  width="600"
+  height="300"
+  frameborder="0"
+></iframe>
+<iframe
+  src="assets/3_2_4.html"
+  width="600"
+  height="300"
+  frameborder="0"
+></iframe>
+
+- On the other hand, with a p-value of 0.112321477466234, we can see from the graphs that the column 'average_rating_recipe' does not depend on 'n_ingredients'. The distribution of 'n_ingredients' with missing ratings is similar to that of the 'n_ingredients' without missing ratings. 
+
 
 ## Hypothesis Testing
 
