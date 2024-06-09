@@ -42,8 +42,8 @@ by Zijie Feng
 
 <iframe
   src="assets/2_2_1.html"
-  width="800"
-  height="600"
+  width="500"
+  height="300"
   frameborder="0"
 ></iframe>
 
