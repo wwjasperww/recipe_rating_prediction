@@ -137,6 +137,17 @@ by Zijie Feng
 
 ## Hypothesis Testing
 
+- **Null Hypothesis**: The distribution of calories of recipes that have an average rating of 5 is the same as the distribution of calories of recipes with average ratings lower than 5.
+- **Alternative Hypothesis**: The distribution of calories of recipes that have an average rating of 5 has a higher mean than the distribution of calories of recipes that have average ratings lower than 5.
+
+<iframe
+  src="assets/4_1.html"
+  width="600"
+  height="300"
+  frameborder="0"
+></iframe>
+
+- The chosen test statistic here is the difference between group means and the significance level is 0.05. One group represents recipes with an average rating of 5 and the other group represents recipes with average ratings lower than 5. After simulating a large amount of mean differences, the observed mean difference lies very far away from the center of the distribution, having a p-value of 0, meaning no simulated test statistic has surpassed the observed one. This leads to the rejection of the null hypothesis in favor of the alternative hypothesis. The result here indicates that it is likely the case recipes with a higher rating tend to have a higher amount of calories. This helps us determine the answer to the main question of this project: what kind of recipes tend to have a higher average rating?
 
 ## Framing a Prediction Problem
 
