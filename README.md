@@ -79,6 +79,14 @@ by Zijie Feng
 
 - Plot 2: A clear upward movement can be seen as we go from left to right. Sugar seems to have a positive correlation with the amount of calories contained in a recipe.
 
+
+### Interesting Aggregates
+
+|   Really Low |      Low |   Medium |     High |   Really High |\n|-------------:|---------:|---------:|---------:|--------------:|\n|      5.66682 |  6.71578 |  7.0395  |  7.34443 |       7.18963 |\n|      7.86316 |  8.80775 |  9.02783 |  9.35648 |       9.48525 |\n|      8.68417 |  9.84759 |  9.98878 | 10.2119  |      10.5632  |\n|      9.03142 | 10.2532  | 10.3551  | 10.6438  |      11.1271  |\n|      8.81313 | 10.3634  | 10.8512  | 11.1486  |      11.7494  |
+
+- When going from top to bottom, the number of ingredients go up since the number of minutes is going from really low to really high, meaning we are probably getting more ingredients involved while spending more time to cook. When going from left to right, the general trend is that with more and more total fat, we are probably adding more ingredients, however, there is one expection in this trend which is the last element in the first row. When the cooking time is really low, the number of ingredients used actually drops when total fat reaches the highest level. Maybe when we are in a hurry, somehow we would prefer to use fewer ingredients that contain more fat so we can consume enough energy efficiently.
+
+
 ## Assessment of Missingness
 
 
