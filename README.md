@@ -151,12 +151,35 @@ by Zijie Feng
 
 ## Framing a Prediction Problem
 
+- The prediction problem will be a regression problem where I will try to build a model to predict values in the 'average_rating_recipe' column. I chose this column because it corresponds to the theme of this project and I belive I can gain more insight about how different factors contribute to the recipe rating, through this prediction problem. The metric I plan on using would be the RMSE as it is the most intuitive way to understand how far off of how accurate our model is performing. In order to build this model, columns including 'minutes', 'n_steps', 'n_ingredients', 'calories' and the 6 columns of nutrition values are all reasonable factors to be considered and they are all information we will be able to know at the time of prediction since the recipe itself could tell us such information.
 
 ## Baseline Model
 
+- The baseline model I used was a very simple linear regression model using just 2 columns from the original dataset. The 2 features are 'n_steps', 'calories', which both are quantitative variables. The only column transformer method I used here was the FunctionTransformer, which was used to select out the desired 2 columns from the dataset, for model training. No encodings were really done on my training data since they are both quantitative. I chose these 2 features because there existed evidence in the previous steps of this project that these 2 features might contain valuable information regarding a recipe's rating. After training the baseline model, I was able to obtain an RMSE of about 0.65 which I think can be considered decent performance. If the actual average rating in the future is 4.75 and the model predicted 4.1, I would say this is acceptable.
 
 ## Final Model
 
+- The features I added include polynomial feature generated from the 'calories' column with a degree of 2, and the new 'n_steps' column using a binarizer. According to this graph: 
+
+<iframe
+  src="assets/7_1.html"
+  width="600"
+  height="300"
+  frameborder="0"
+></iframe>
+
+It seems like the relationship between calories and ratings could be quadratic and so creating polynomial features of degree 2 can help us more easily separate different nodes in the decision tree. Regarding the 'n_steps' column 
+
+<iframe
+  src="assets/7_2.html"
+  width="600"
+  height="300"
+  frameborder="0"
+></iframe>
+
+I would like to simplify this numerical column to a binary categorical column because this way, when people are making recipes, they can be more conscious about the ratings they might get when considering whether to exceed this n_steps limit. Both of these 2 features are selected for use in the baseline model, which already produced a pretty good result, so I wanted to improve them further to see if there could be bigger enhancements.
+
+- The modeling algorithm I chose was a Random Forest Regressor, which divides my training data into different groups using layers of decision rules. A Random Forest involves many different decision trees and it makes a decision based on the votes of all of its decision trees, which helps reduce variance significantly. The hyperparameters I chose to tune include n_estimators, max_depth, and min_samples_split. These hyperparameters helped me find a balance between bias and variance. The final selected combination of these hyperparameters is: n_estimators=300, max_depth=15, and min_samples_split=1500. A GridSearchCV was used to find this best combination, while setting the parameter scoring='neg_root_mean_squared_error'. Thus, this combination of hyperparameters provided the best RMSE in my process. While the improvement in RMSE from the baseline model to the final model is minimal, 0.650 - 0.648, I believe tha final model is a better model because it's more sophisticated, using more features, and more robust towards unseen data, quality of ensemble models. If they were to be put in production for real-world situations, the final model should be able to handle better.
 
 ## Fairness Analysis
 
