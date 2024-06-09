@@ -82,9 +82,8 @@ by Zijie Feng
 
 ### Interesting Aggregates
 
-                                        total_fat
-                                        
-| minutes     |   Really Low |      Low |   Medium |     High |   Really High |
+| total_fat   |   Really Low |      Low |   Medium |     High |   Really High |
+| minutes     |              |          |          |          |               |
 |:------------|-------------:|---------:|---------:|---------:|--------------:|
 | Really Low  |      5.66682 |  6.71578 |  7.0395  |  7.34443 |       7.18963 |
 | Low         |      7.86316 |  8.80775 |  9.02783 |  9.35648 |       9.48525 |
