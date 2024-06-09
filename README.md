@@ -59,6 +59,26 @@ by Zijie Feng
 - Plot 2: Shows that more than half of the recipes have an average rating of 5, and almost all recipes have an average rating above 3.
 
 
+### Bivariate Analysis
+
+<iframe
+  src="assets/2_3_1.html"
+  width="600"
+  height="300"
+  frameborder="0"
+></iframe>
+
+- Plot 1: Although not extremely clear, there does seem to be an upward trend as we go from left to right. More carbohydrates potentially correlates with more total fat.
+
+<iframe
+  src="assets/2_3_2.html"
+  width="600"
+  height="300"
+  frameborder="0"
+></iframe>
+
+- Plot 2: A clear upward movement can be seen as we go from left to right. Sugar seems to have a positive correlation with the amount of calories contained in a recipe.
+
 ## Assessment of Missingness
 
 
